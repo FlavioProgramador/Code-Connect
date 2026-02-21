@@ -2,3 +2,9 @@
   width: 438px;
   height: 133px;
 }
+
+.avatar-list {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
