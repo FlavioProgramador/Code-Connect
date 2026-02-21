@@ -1,10 +1,19 @@
-.image-post {
-  width: 438px;
-  height: 133px;
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
 
-.avatar-list {
-  display: flex;
-  align-items: flex-end;
-  gap: 8px;
+.avatarImage {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatarName {
+  color: #bcbcbc;
+  font-size: 14px;
+  font-weight: 500;
 }

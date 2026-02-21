@@ -2,6 +2,7 @@ import { Prompt } from 'next/font/google'
 
 import Aside from "@/components/Aside/Aside";
 import "./globals.css";
+import CardPost from '@/components/CardPost/CardPost';
 
 export const metadata = {
   title: "Code Connect",

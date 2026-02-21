@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Avatar from "../Avatar/Avatar";
 import styles from "./CardPost.module.css";
+import Link from "next/link";
 
 const CardPost = () => {
   const [posts, setPosts] = useState([]);
@@ -20,7 +21,7 @@ const CardPost = () => {
     fetchPost();
   }, []);
   return (
-    <div>
+    <div className={styles["card-container"]}>
       {posts.map((post) => (
         <article key={post.id} className={styles["card-post"]}>
           <header className={styles["header-card"]}>
@@ -37,6 +38,7 @@ const CardPost = () => {
           <section className={styles["section-card"]}>
             <h3>{post.title}</h3>
             <p>{post.body}</p>
+            <Link className={styles["link-card"]} href={`/post/${post.id}`}>Ver detalhes</Link>
           </section>
           <footer className={styles["footer-card"]}>
             <Avatar imageSrc={post.author.avatar} name={post.author.username} />

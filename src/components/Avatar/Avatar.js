@@ -3,19 +3,18 @@ import styles from "./Avatar.module.css";
 
 const Avatar = ({ name, imageSrc }) => {
   return (
-    <ul className={styles["avatar-list"]}>
+    <div className={styles.avatar}>
       {imageSrc && (
-        <li className={styles["avatar-item"]}>
-          <Image
-            src={imageSrc}
-            width={32}
-            height={32}
-            alt={`Avatar do(a) ${name}`}
-          />
-        </li>
+        <Image
+          src={imageSrc}
+          width={32}
+          height={32}
+          alt={`Avatar do(a) ${name}`}
+          className={styles.avatarImage}
+        />
       )}
-      <li className={styles["avatar-name"]}>{name}</li>
-    </ul>
+      <span className={styles.avatarName}>@{name}</span>
+    </div>
   );
 };
 

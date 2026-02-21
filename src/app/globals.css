@@ -1,7 +1,7 @@
 body {
   background: linear-gradient(180deg, #0E1112 0%, #00090E 100%);
   margin: 0;
-  max-width: 100vh;
+  max-width: 100vw;
 }
 
 .app-container {
