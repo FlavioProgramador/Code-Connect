@@ -5,14 +5,14 @@
   gap: 8px;
 }
 
-.avatarImage {
+.avatar-image {
   width: 32px;
   height: 32px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.avatarName {
+.avatar-name {
   color: #bcbcbc;
   font-size: 14px;
   font-weight: 500;

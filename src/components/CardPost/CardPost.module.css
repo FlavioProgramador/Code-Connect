@@ -8,6 +8,12 @@
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.card-post:hover {
+  transform: scale(1.02); 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
 }
 
 .card-container {
@@ -67,6 +73,7 @@
 
 .footer-card {
   display: flex;
+  justify-content: flex-end; 
   align-items: center;
   margin-top: auto;
   padding: 16px;
@@ -79,9 +86,4 @@
   margin-right: 8px;
 }
 
-.footer-card {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 16px;
-}
+

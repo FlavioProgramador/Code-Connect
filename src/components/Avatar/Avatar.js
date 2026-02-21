@@ -10,10 +10,10 @@ const Avatar = ({ name, imageSrc }) => {
           width={32}
           height={32}
           alt={`Avatar do(a) ${name}`}
-          className={styles.avatarImage}
+          className={styles['avatar-image']}
         />
       )}
-      <span className={styles.avatarName}>@{name}</span>
+      <span className={styles['avatar-name']}>@{name}</span>
     </div>
   );
 };
