@@ -6,16 +6,22 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "seed": "node --experimental-strip-types prisma/seed.js"
   },
   "dependencies": {
+    "@prisma/adapter-better-sqlite3": "^7.4.1",
+    "@prisma/client": "^7.4.1",
+    "better-sqlite3": "^12.6.2",
     "next": "16.1.6",
+    "prisma": "^7.4.1",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },
   "devDependencies": {
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^10.0.1",
-    "eslint-config-next": "^0.2.4"
+    "eslint-config-next": "^0.2.4",
+    "tsx": "^4.21.0"
   }
 }

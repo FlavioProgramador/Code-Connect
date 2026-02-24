@@ -1,0 +1,32 @@
+// This is your Prisma schema file
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Author {
+  id       Int     @id @default(autoincrement())
+  name     String
+  username String  @unique
+  avatar   String?
+  posts    Post[]
+}
+
+model Post {
+  id        Int      @id @default(autoincrement())
+  cover     String?
+  title     String
+  slug      String   @unique
+  body      String
+  markdown  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  author    Author   @relation(fields: [authorId], references: [id])
+  authorId  Int
+}

@@ -2,11 +2,10 @@ import { Prompt } from 'next/font/google'
 
 import Aside from "@/components/Aside/Aside";
 import "./globals.css";
-import CardPost from '@/components/CardPost/CardPost';
 
 export const metadata = {
   title: "Code Connect",
-  description: "Uma rede social para devs",
+  description: "Code Connect é a rede social para desenvolvedores: compartilhe posts, descubra projetos e conecte-se com a comunidade dev.",
 };
 
 const prompt = Prompt({
