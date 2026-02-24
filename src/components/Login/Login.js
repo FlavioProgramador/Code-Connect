@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import api from "../services/api";
+import api from "../../services/api";
 import styles from "./Login.module.css";
 
 const Login = ({ onLogin, onSwitchToRegister }) => {

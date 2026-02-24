@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
-import api from "../services/api";
-import styles from "./Register.module.css";
+import api from "../../services/api";
+import styles from "./UserForm.module.css";
 
 const UserForm = ({ onSwitchToLogin }) => {
   const [form, setForm] = useState({ name: "", email: "" });
