@@ -45,6 +45,13 @@ export default async function PostDetail({ params }) {
 
           <section className={styles.body}>
             <p>{post.body}</p>
+            {post.markdown && (
+              <div className={styles.codeSnippet}>
+                <pre>
+                  <code>{post.markdown}</code>
+                </pre>
+              </div>
+            )}
           </section>
         </article>
       </main>

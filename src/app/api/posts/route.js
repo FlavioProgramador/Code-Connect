@@ -25,9 +25,14 @@ export async function GET() {
  */
 export async function POST(request) {
   try {
-    const body = await request.json();
-    const post = await createNewPost(body);
-    return NextResponse.json(post, { status: 201 });
+    const { title, slug, body, cover, markdown, authorId = 1 } = await request.json();
+
+    if (!title || !slug || !body) {
+      return NextResponse.json({ error: "Title, slug and content are required." }, { status: 400 });
+    }
+
+    const newPost = await createNewPost({ title, slug, body, cover, markdown, authorId });
+    return NextResponse.json(newPost, { status: 201 });
   } catch (error) {
     const status = error.message.includes("obrigatório") ? 400 : 500;
     return NextResponse.json({ error: error.message }, { status });

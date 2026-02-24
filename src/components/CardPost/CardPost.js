@@ -13,7 +13,7 @@ const CardPost = ({ posts = [] }) => {
             <figure className={styles["figure-card"]}>
               <Image
                 className={styles["img-card"]}
-                src={post.cover}
+                src={post.cover || "https://raw.githubusercontent.com/viniciosneves/code-connect-assets/main/posts/introducao-ao-react.png"}
                 width={438}
                 height={133}
                 alt={`Capa do post de titulo ${post.title}`}

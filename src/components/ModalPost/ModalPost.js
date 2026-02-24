@@ -3,7 +3,7 @@ import { useState } from "react";
 import styles from "./ModalPost.module.css";
 
 const ModalPost = ({ open, onClose, onSubmit, authorId }) => {
-  const [form, setForm] = useState({ title: "", content: "" });
+  const [form, setForm] = useState({ title: "", content: "", cover: "", markdown: "" });
   const [error, setError] = useState("");
 
   if (!open) return null;
@@ -20,7 +20,7 @@ const ModalPost = ({ open, onClose, onSubmit, authorId }) => {
       return;
     }
     await onSubmit({ ...form, authorId });
-    setForm({ title: "", content: "" });
+    setForm({ title: "", content: "", cover: "", markdown: "" });
     onClose();
   };
 
@@ -31,28 +31,42 @@ const ModalPost = ({ open, onClose, onSubmit, authorId }) => {
         <form onSubmit={handleSubmit} style={{ width: "100%" }}>
           <input
             name="title"
-            placeholder="Título"
+            placeholder="Título principal do seu POST"
             value={form.title}
             onChange={handleChange}
             required
           />
+          <input
+            name="cover"
+            placeholder="URL da Imagem de Capa (Opcional)"
+            value={form.cover}
+            onChange={handleChange}
+          />
           <textarea
             name="content"
-            placeholder="Conteúdo"
+            placeholder="Escreva seu resumo ou conteúdo aqui..."
             value={form.content}
             onChange={handleChange}
             required
-            rows={5}
+            rows={3}
           />
-          {error && <p style={{ color: "#ff5252" }}>{error}</p>}
+          <textarea
+            name="markdown"
+            placeholder="Trecho de Código ou Markdown (Opcional)"
+            value={form.markdown}
+            onChange={handleChange}
+            rows={4}
+            style={{ fontFamily: "monospace" }}
+          />
+          {error && <p style={{ color: "var(--text-error)" }}>{error}</p>}
           <button type="submit">Publicar</button>
           <button
             type="button"
             onClick={onClose}
             style={{
-              background: "#23282a",
-              color: "#fff",
-              border: "1px solid #00bfae",
+              background: "var(--bg-input)",
+              color: "var(--text-primary)",
+              border: "1px solid var(--border-color)",
             }}
           >
             Cancelar

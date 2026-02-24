@@ -20,6 +20,8 @@ const Aside = ({ authorId }) => {
         title: data.title,
         slug: slug,
         body: data.content,
+        cover: data.cover || undefined,
+        markdown: data.markdown || undefined,
         // Usa o authorId real do usuário autenticado (ou 1 de fallback)
         authorId: authorId || 1
       };

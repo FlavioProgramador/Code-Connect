@@ -1,73 +1,84 @@
-.card-post {
-  width: 486px;
-  height: 431px;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 24px;
-  background-color: #171d1f;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease; 
-}
-
-.card-post:hover {
-  transform: scale(1.02); 
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
-}
-
 .card-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr); 
   gap: 24px; 
-  padding: 16px; 
+  padding: 0; 
+}
+
+.card-post {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-base);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card-post:hover {
+  box-shadow: var(--shadow-hover);
+  border-color: #384245;
 }
 
 .header-card {
-  background-color: #888888;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 200px;
   overflow: hidden;
+  background-color: #000;
 }
 
 .header-card .img-card {
-  width: 438px;
-  height: 133px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.356);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card-post:hover .img-card {
+  transform: scale(1.02);
 }
 
 .section-card {
   display: flex;
   flex-direction: column;
-  padding: 16px;
-  gap: 8px;
+  padding: 20px;
+  gap: 12px;
+  flex-grow: 1;
 }
 
 .section-card h3 {
-  color: #ffffff;
+  color: var(--text-primary);
   font-weight: 700;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.4;
   margin: 0;
 }
 
 .section-card p {
-  color: #bcbcbc;
-  font-size: 14px;
+  color: var(--text-secondary);
+  font-size: 15px;
   line-height: 1.6;
   margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .section-card .link-card {
-  color: #81FE88;
-  font-size: 14px;
+  color: var(--accent-primary);
   text-decoration: none;
-  margin-top: 20px;
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.link-card:hover {
   text-decoration: underline;
 }
 
@@ -75,8 +86,8 @@
   display: flex;
   justify-content: flex-end; 
   align-items: center;
-  margin-top: auto;
-  padding: 16px;
+  padding: 16px 20px;
+  border-top: 1px solid var(--border-color);
 }
 
 .footer-card img {
@@ -85,5 +96,3 @@
   border-radius: 50%;
   margin-right: 8px;
 }
-
-

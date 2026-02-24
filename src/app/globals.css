@@ -1,15 +1,58 @@
+:root {
+  /* Cores de Fundo Sólidas */
+  --bg-base: #0E1112;      /* Cor de fundo primária do App */
+  --bg-surface: #171d1f;   /* Cor de fundo para Cards e Aside */
+  --bg-input: #23282a;     /* Cor de inputs da aplicação */
+  
+  /* Bordas */
+  --border-color: #2a3133;
+
+  /* Texto */
+  --text-primary: #ffffff;
+  --text-secondary: #bcbcbc;
+  --text-error: #ff5252;
+  
+  /* Cores de Destaque */
+  --accent-primary: #00bfae;
+  --accent-hover: #008c7a;
+
+  /* Sombras Sólidas (sem brilho neon) */
+  --shadow-base: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
 body {
-  background: linear-gradient(180deg, #0E1112 0%, #00090E 100%);
+  background-color: var(--bg-base);
+  color: var(--text-primary);
   margin: 0;
+  min-height: 100vh;
   max-width: 100vw;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .app-container {
   width: 1200px;
-  max-width: 90%;
-  margin: 56px auto;
+  max-width: 95%;
+  margin: 40px auto;
   display: flex;
   align-items: stretch;
-  gap: 28px;
-  height: 100vh;
+  gap: 32px;
+  height: calc(100vh - 80px); /* Usa a altura total menos a margem superior/inferior */
+}
+
+/* Scrollbar styling para manter o look premium */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
 }
