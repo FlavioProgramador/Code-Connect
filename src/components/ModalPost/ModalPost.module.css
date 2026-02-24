@@ -11,7 +11,7 @@
   z-index: 1000;
 }
 .modal-content {
-  background-color: var(--bg-surface);
+  background-color: #171d1f; /* Hardcoded solid escuro para parar vazamento */
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-base);
   padding: 32px;
@@ -32,7 +32,7 @@
   width: 100%;
   padding: 12px;
   margin-bottom: 16px;
-  background-color: var(--bg-input);
+  background-color: #23282a; /* Hardcoded solid dark para Inputs */
   border: 1px solid var(--border-color);
   color: var(--text-primary);
   border-radius: 8px;
@@ -91,7 +91,7 @@
 .file-input {
   flex: 1;
   padding: 10px;
-  background-color: var(--bg-input);
+  background-color: #23282a;
   border: 1px dashed var(--border-color);
   color: var(--text-secondary);
   border-radius: 8px;

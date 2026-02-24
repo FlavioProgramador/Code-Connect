@@ -21,9 +21,10 @@ export async function getAllPosts() {
 }
 
 export async function getPostById(id) {
-  if (!id) throw new Error("ID do post é obrigatório.");
+  const numericId = Number(id);
+  if (!numericId) throw new Error("ID do post precisa ser um número.");
   try {
-    const post = await findPostById(id);
+    const post = await findPostById(numericId);
     if (!post) throw new Error("Post não encontrado.");
     return post;
   } catch (error) {
@@ -46,9 +47,10 @@ export async function createNewPost(data) {
 }
 
 export async function updateExistingPost(id, data) {
-  if (!id) throw new Error("ID do post é obrigatório.");
+  const numericId = Number(id);
+  if (!numericId) throw new Error("ID do post precisa ser um número.");
   try {
-    return await updatePost(id, data);
+    return await updatePost(numericId, data);
   } catch (error) {
     console.error(`[PostService] updateExistingPost(${id}):`, error.message);
     throw new Error("Não foi possível atualizar o post.");
@@ -56,9 +58,10 @@ export async function updateExistingPost(id, data) {
 }
 
 export async function removePost(id) {
-  if (!id) throw new Error("ID do post é obrigatório.");
+  const numericId = Number(id);
+  if (!numericId) throw new Error("ID do post precisa ser um número.");
   try {
-    await deletePost(id);
+    await deletePost(numericId);
   } catch (error) {
     console.error(`[PostService] removePost(${id}):`, error.message);
     throw new Error("Não foi possível remover o post.");

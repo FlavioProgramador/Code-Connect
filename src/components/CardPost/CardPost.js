@@ -11,13 +11,23 @@ const CardPost = ({ posts = [] }) => {
         <article key={post.id} className={styles["card-post"]}>
           <header className={styles["header-card"]}>
             <figure className={styles["figure-card"]}>
-              <Image
-                className={styles["img-card"]}
-                src={post.cover || "https://raw.githubusercontent.com/viniciosneves/code-connect-assets/main/posts/introducao-ao-react.png"}
-                width={438}
-                height={133}
-                alt={`Capa do post de titulo ${post.title}`}
-              />
+              {post.cover ? (
+                <Image
+                  className={styles["img-card"]}
+                  src={post.cover}
+                  width={438}
+                  height={133}
+                  alt={`Capa do post de titulo ${post.title}`}
+                />
+              ) : (
+                <Image
+                  className={styles["img-card"]}
+                  src="https://raw.githubusercontent.com/viniciosneves/code-connect-assets/main/posts/introducao-ao-react.png"
+                  width={438}
+                  height={133}
+                  alt={`Capa padrão do post ${post.title}`}
+                />
+              )}
             </figure>
           </header>
           <section className={styles["section-card"]}>

@@ -27,7 +27,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 200px;
+  height: 180px;
   overflow: hidden;
   background-color: #000;
 }
@@ -39,6 +39,7 @@
   transition: transform 0.3s ease;
 }
 
+
 .card-post:hover .img-card {
   transform: scale(1.02);
 }
@@ -46,8 +47,8 @@
 .section-card {
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  gap: 12px;
+  padding: 24px;
+  gap: 16px;
   flex-grow: 1;
 }
 
@@ -81,14 +82,16 @@
 .section-card .link-card {
   color: var(--accent-primary);
   text-decoration: none;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   margin-top: auto;
   align-self: flex-start;
+  transition: opacity 0.2s ease;
 }
 
 .link-card:hover {
   text-decoration: underline;
+  opacity: 0.8;
 }
 
 .footer-card {
