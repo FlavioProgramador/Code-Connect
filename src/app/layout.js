@@ -1,4 +1,5 @@
 import { Prompt } from 'next/font/google'
+import { cookies } from "next/headers";
 
 import Aside from "@/components/Aside/Aside";
 import "./globals.css";
@@ -14,15 +15,19 @@ const prompt = Prompt({
   display: "swap",
 })
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const cookieStore = await cookies();
+  const userId = cookieStore.get("userId")?.value;
+
   return (
-    <html lang="pt-BR " className={prompt.className}>
+    <html lang="pt-BR" className={prompt.className}>
       <body>
         <div className="app-container">
-          <Aside />
+          {userId && <Aside authorId={Number(userId)} />}
           {children}
         </div>
       </body>
     </html>
   );
 }
+

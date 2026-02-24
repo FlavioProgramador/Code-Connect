@@ -1,11 +1,68 @@
 .aside {
-  background-color: #171D1F;
+  background-color: #171d1f;
   padding: 40px 16px;
   border-radius: 8px;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px; /* Baseado na proporção da imagem */
+  height: calc(100vh - 112px); /* Altura total menos a margem */
 }
 
 .logo {
   width: 127.26px;
   height: 40px;
+  margin-bottom: 40px;
+}
+
+.publish-btn {
+  background: transparent;
+  color: #00bfae;
+  border: 1px solid #00bfae;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 48px;
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+.publish-btn:hover {
+  background: rgba(0, 191, 174, 0.1);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #bcbcbc;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.nav-item:hover {
+  color: #00bfae;
+}
+
+/* Icons (usaremos svg inline no js, mas controlamos a cor aqui) */
+.nav-item svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
 }
