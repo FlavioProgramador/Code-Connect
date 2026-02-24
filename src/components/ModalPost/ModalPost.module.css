@@ -58,8 +58,61 @@
   background-color: var(--accent-primary);
   color: #fff;
 }
-.modal-content button[type="submit"]:hover {
+.modal-content button[type="submit"]:hover:not(:disabled) {
   background-color: var(--accent-hover);
+}
+
+.modal-content button[type="submit"]:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* --- Novos Estilos para o Grupo de Upload --- */
+.file-upload-group {
+  width: 100%;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.file-label {
+  font-size: 14px;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.file-inputs {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.file-input {
+  flex: 1;
+  padding: 10px;
+  background-color: var(--bg-input);
+  border: 1px dashed var(--border-color);
+  color: var(--text-secondary);
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 0 !important;
+}
+
+.or-divider {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: bold;
+}
+
+.url-input {
+  flex: 2;
+  margin-bottom: 0 !important;
+}
+
+.file-name {
+  font-size: 12px;
+  color: var(--accent-primary);
 }
 .modal-content button[type="button"]:hover {
   background-color: #384245 !important;
